@@ -12,6 +12,15 @@
         android:layout_height="wrap_content"
         android:text="Hello World!" />
 
+    <com.unit.test.myrainsnowtest.panningview.PanningView
+        android:id="@+id/train"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        app:autoStart="true"
+        app:duration="3000"
+        app:drawable="@drawable/subway" />
+
 
     <!--<com.unit.test.myrainsnowtest.snowfall.SnowfallView-->
         <!--android:layout_width="match_parent"-->
