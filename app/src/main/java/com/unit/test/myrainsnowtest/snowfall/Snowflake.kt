@@ -81,7 +81,7 @@ internal class Snowflake(val params: Params) {
   }
 
   fun update() {
-    positionX += speedX
+    positionX += 2
     positionY += speedY
     if (positionY > params.parentHeight) {
       if (shouldRecycleFalling) {
