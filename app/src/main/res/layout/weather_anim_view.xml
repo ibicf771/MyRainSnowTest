@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <RelativeLayout
+        android:id="@+id/lightning_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:background="@drawable/shanbai">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/shandianyun"/>
+    </RelativeLayout>
+
+
+
+
+
+    <com.unit.test.myrainsnowtest.panningview.PanningView
+        android:id="@+id/train"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        app:autoStart="true"
+        app:duration="15000"
+        app:leftToRight="true"
+        app:drawable="@drawable/yunhou" />
+
+
+    <com.unit.test.myrainsnowtest.panningview.PanningView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        app:autoStart="true"
+        app:duration="15000"
+        app:leftToRight="false"
+        app:drawable="@drawable/yunqian" />
+
+
+
+
+
+
+    <!--<com.unit.test.myrainsnowtest.snowfall.SnowfallView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--app:snowflakesNum="250"-->
+    <!--app:snowflakeAlphaMin="150"-->
+    <!--app:snowflakeAlphaMax="255"-->
+    <!--app:snowflakeAngleMax="5"-->
+    <!--app:snowflakeSizeMin="8dp"-->
+    <!--app:snowflakeSizeMax="32dp"-->
+    <!--app:snowflakeSpeedMin="4"-->
+    <!--app:snowflakeSpeedMax="12"-->
+    <!--app:snowflakesFadingEnabled="true"-->
+    <!--app:snowflakesAlreadyFalling="false"-->
+    <!--app:snowflakeImage="@drawable/snowflake"/>-->
+
+    <com.unit.test.myrainsnowtest.snowfall.SnowfallView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="200dp"
+        app:snowflakesNum="100"
+        app:snowflakeAlphaMin="100"
+        app:snowflakeAlphaMax="255"
+        app:snowflakeAngleMax="5"
+        app:snowflakeSizeMin="15dp"
+        app:snowflakeSizeMax="32dp"
+        app:snowflakeSpeedMin="20"
+        app:snowflakeSpeedMax="25"
+        app:snowflakesFadingEnabled="false"
+        app:snowflakesAlreadyFalling="true"
+        app:snowflakeImage="@drawable/rain"/>
+</RelativeLayout>
