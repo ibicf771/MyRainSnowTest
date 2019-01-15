@@ -12,14 +12,32 @@
         android:layout_height="wrap_content"
         android:text="Hello World!" />
 
+
+
+
     <com.unit.test.myrainsnowtest.panningview.PanningView
         android:id="@+id/train"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         app:autoStart="true"
-        app:duration="3000"
-        app:drawable="@drawable/subway" />
+        app:duration="20000"
+        app:leftToRight="true"
+        app:drawable="@drawable/yunhou" />
+
+
+    <com.unit.test.myrainsnowtest.panningview.PanningView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        app:autoStart="true"
+        app:duration="20000"
+        app:leftToRight="false"
+        app:drawable="@drawable/yunqian" />
+
+
+
+
 
 
     <!--<com.unit.test.myrainsnowtest.snowfall.SnowfallView-->

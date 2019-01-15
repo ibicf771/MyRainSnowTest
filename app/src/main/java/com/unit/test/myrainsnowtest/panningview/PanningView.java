@@ -54,6 +54,8 @@ public class PanningView extends View {
 
     private PanningListener panningListener;
 
+    private boolean leftToRight = true;
+
     public PanningView(Context context) {
         this(context, null);
     }
@@ -71,8 +73,15 @@ public class PanningView extends View {
             duration = a.getInteger(R.styleable.PanningView_duration, (int) TRANSITION_DURATION);
             drawable = a.getDrawable(R.styleable.PanningView_drawable);
             autoStart = a.getBoolean(R.styleable.PanningView_autoStart, false);
+            leftToRight = a.getBoolean(R.styleable.PanningView_leftToRight, true);
         }finally {
             a.recycle();
+        }
+
+        if(leftToRight){
+            panning =  new HorizontalPanning(HorizontalPanning.LEFT_TO_RIGHT);
+        }else {
+            panning = new HorizontalPanning(HorizontalPanning.RIGHT_TO_LEFT);
         }
 
         init();
