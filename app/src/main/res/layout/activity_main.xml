@@ -7,10 +7,21 @@
     android:background="@android:color/black"
     tools:context="com.unit.test.myrainsnowtest.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
+    <RelativeLayout
+        android:id="@+id/lightning_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:background="@drawable/shanbai">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/shandianyun"/>
+    </RelativeLayout>
+
 
 
 
@@ -21,7 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         app:autoStart="true"
-        app:duration="20000"
+        app:duration="15000"
         app:leftToRight="true"
         app:drawable="@drawable/yunhou" />
 
@@ -31,7 +42,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         app:autoStart="true"
-        app:duration="20000"
+        app:duration="15000"
         app:leftToRight="false"
         app:drawable="@drawable/yunqian" />
 
@@ -58,6 +69,7 @@
     <com.unit.test.myrainsnowtest.snowfall.SnowfallView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="200dp"
         app:snowflakesNum="100"
         app:snowflakeAlphaMin="100"
         app:snowflakeAlphaMax="255"
