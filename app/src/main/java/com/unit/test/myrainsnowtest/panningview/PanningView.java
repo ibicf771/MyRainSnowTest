@@ -18,8 +18,9 @@ import com.unit.test.myrainsnowtest.R;
  */
 public class PanningView extends View {
 
-    public interface PanningListener{
+    public interface PanningListener {
         void onPanningStart(PanningView panningView);
+
         void onPanningEnd(PanningView panningView);
     }
 
@@ -74,20 +75,20 @@ public class PanningView extends View {
             drawable = a.getDrawable(R.styleable.PanningView_drawable);
             autoStart = a.getBoolean(R.styleable.PanningView_autoStart, false);
             leftToRight = a.getBoolean(R.styleable.PanningView_leftToRight, true);
-        }finally {
+        } finally {
             a.recycle();
         }
 
-        if(leftToRight){
-            panning =  new HorizontalPanning(HorizontalPanning.LEFT_TO_RIGHT);
-        }else {
+        if (leftToRight) {
+            panning = new HorizontalPanning(HorizontalPanning.LEFT_TO_RIGHT);
+        } else {
             panning = new HorizontalPanning(HorizontalPanning.RIGHT_TO_LEFT);
         }
 
         init();
     }
 
-    private void init(){
+    private void init() {
         setDrawable(drawable);
     }
 
@@ -97,7 +98,7 @@ public class PanningView extends View {
         int desiredWidth = 0;
         int desiredHeight = 0;
 
-        if(drawable != null){
+        if (drawable != null) {
             desiredWidth = drawable.getIntrinsicWidth();
             desiredHeight = drawable.getIntrinsicHeight();
         }
@@ -136,12 +137,12 @@ public class PanningView extends View {
     @Override
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
-        if(autoStart)
+        if (autoStart)
             start();
     }
 
-    private void calculateValues(){
-        scaleFactor = (float)getMeasuredHeight() / (float) drawable.getIntrinsicHeight();
+    private void calculateValues() {
+        scaleFactor = (float) getMeasuredHeight() / (float) drawable.getIntrinsicHeight();
         drawable.setBounds(0, 0, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight());
         matrix.reset();
         matrix.postScale(scaleFactor, scaleFactor);
@@ -159,8 +160,9 @@ public class PanningView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
 
-        if(state == START_STATE)
-            elapsedTime += System.currentTimeMillis() - lastFrameTime;;
+        if (state == START_STATE)
+            elapsedTime += System.currentTimeMillis() - lastFrameTime;
+        ;
 
         float f = Math.max(0, Math.min(1, elapsedTime / (float) duration));
 
@@ -171,15 +173,15 @@ public class PanningView extends View {
         canvas.concat(matrix);
         drawable.draw(canvas);
 
-        if(state == PAUSE_STATE) {
+        if (state == PAUSE_STATE) {
             return;
         }
 
-        if(elapsedTime < duration) {
+        if (elapsedTime < duration) {
             lastFrameTime = System.currentTimeMillis();
             ViewCompat.postInvalidateOnAnimation(this);
-        }else{
-            if(panningListener != null){
+        } else {
+            if (panningListener != null) {
                 panningListener.onPanningEnd(this);
             }
         }
@@ -188,46 +190,46 @@ public class PanningView extends View {
     /**
      * Sets the duration of the animation
      */
-    public void setDuration(long duration){
+    public void setDuration(long duration) {
         this.duration = duration;
     }
 
     /**
      * Sets the {@link Panning} implementation of the animation
      */
-    public void setPanning(Panning panning){
+    public void setPanning(Panning panning) {
         this.panning = panning;
         requestLayout();
     }
 
-    public Panning getPanning(){
+    public Panning getPanning() {
         return this.panning;
     }
 
-    public void setDrawable(int resourceId){
+    public void setDrawable(int resourceId) {
         setDrawable(ContextCompat.getDrawable(getContext(), resourceId));
     }
 
-    private void setDrawable(Drawable drawable){
+    private void setDrawable(Drawable drawable) {
         this.drawable = drawable;
     }
 
     /**
      * Start the animation
      */
-    public void start(){
+    public void start() {
         state = START_STATE;
         lastFrameTime = System.currentTimeMillis();
         elapsedTime = 0;
         invalidate();
-        if(panningListener != null)
+        if (panningListener != null)
             panningListener.onPanningStart(this);
     }
 
     /**
      * Resume the current animation previous call {@link PanningView#pause()}
      */
-    public void resume(){
+    public void resume() {
         state = START_STATE;
         lastFrameTime += System.currentTimeMillis() - pausedTime;
         invalidate();
@@ -236,7 +238,7 @@ public class PanningView extends View {
     /**
      * Pause the current animation
      */
-    public void pause(){
+    public void pause() {
         state = PAUSE_STATE;
         pausedTime = System.currentTimeMillis();
         invalidate();
@@ -245,7 +247,7 @@ public class PanningView extends View {
     /**
      * Returns if the animation isPaused, only returne true when {@link PanningView#pause()} was called
      **/
-    public boolean isPaused(){
+    public boolean isPaused() {
         return state == PAUSE_STATE;
     }
 

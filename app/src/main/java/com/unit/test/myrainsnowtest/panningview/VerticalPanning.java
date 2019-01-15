@@ -13,7 +13,9 @@ public class VerticalPanning extends Panning {
 
     @Retention(RetentionPolicy.SOURCE)
     @IntDef({TOP_TO_BOTTOM, BOTTOM_TO_TOP})
-    public @interface Way {}
+    public @interface Way {
+    }
+
     public static final int TOP_TO_BOTTOM = 0;
     public static final int BOTTOM_TO_TOP = 1;
 
@@ -22,7 +24,7 @@ public class VerticalPanning extends Panning {
     private float startY;
     private float endY;
 
-    public VerticalPanning(@Way int way){
+    public VerticalPanning(@Way int way) {
         this.way = way;
     }
 
@@ -33,23 +35,23 @@ public class VerticalPanning extends Panning {
         this.endY = calculateEndY();
     }
 
-    private float calculateStartY(){
+    private float calculateStartY() {
 
         RectF displayRect = getDisplaySize();
         RectF viewRect = getViewSize();
 
-        if(way == BOTTOM_TO_TOP)
+        if (way == BOTTOM_TO_TOP)
             return viewRect.top + (viewRect.height() * getStartYOffset());
 
         return displayRect.right - viewRect.height() - (viewRect.height() * getStartYOffset());
     }
 
-    private float calculateEndY(){
+    private float calculateEndY() {
 
         RectF displayRect = getDisplaySize();
         RectF viewRect = getViewSize();
 
-        if(way == BOTTOM_TO_TOP)
+        if (way == BOTTOM_TO_TOP)
             return displayRect.bottom - viewRect.height() - (viewRect.height() * getEndYOffset());
 
         return displayRect.bottom - viewRect.height() + (viewRect.height() * getEndYOffset());
@@ -62,7 +64,7 @@ public class VerticalPanning extends Panning {
 
     @Override
     public float getY(float dt) {
-       return startY + getInterpolator().getInterpolation(dt) * endY;
+        return startY + getInterpolator().getInterpolation(dt) * endY;
     }
 
 }

@@ -7,8 +7,8 @@ import android.view.animation.Interpolator;
 import android.view.animation.LinearInterpolator;
 
 /**
- *  Base class to implement a scrolling animation
- *  that can be set in @{@link PanningView#setPanning(Panning)}
+ * Base class to implement a scrolling animation
+ * that can be set in @{@link PanningView#setPanning(Panning)}
  */
 public abstract class Panning {
 
@@ -28,63 +28,66 @@ public abstract class Panning {
     /**
      * Sets the @{@link Drawable} and  @{@link PanningView} size,
      * this method calls automatically after @{@link PanningView#onMeasure(int, int)}}
+     *
      * @param drawableRect contains the drawable size info (0, 0, {@link Drawable#getIntrinsicWidth()}, {@link Drawable#getIntrinsicHeight()})
-     * @param viewRect contains the view size info (0, 0, {@link View#getMeasuredWidth()}, {@link View#getMeasuredHeight()})
+     * @param viewRect     contains the view size info (0, 0, {@link View#getMeasuredWidth()}, {@link View#getMeasuredHeight()})
      */
-    public void setSize(RectF drawableRect, RectF viewRect){
+    public void setSize(RectF drawableRect, RectF viewRect) {
         this.displayRect = drawableRect;
         this.viewRect = viewRect;
     }
 
     /**
      * Returns a x value in elapsed fraction of an animation
+     *
      * @param dt elapsed fraction (elapsedTime / duration)
      */
     public abstract float getX(float dt);
 
     /**
      * Returns a y value in elapsed fraction of an animation
+     *
      * @param dt elapsed fraction (elapsedTime / duration)
      */
     public abstract float getY(float dt);
 
-    public RectF getDisplaySize(){
+    public RectF getDisplaySize() {
         return displayRect;
     }
 
-    public RectF getViewSize(){
+    public RectF getViewSize() {
         return viewRect;
     }
 
-    public void setStartXOffset(float offset){
+    public void setStartXOffset(float offset) {
         this.xStartOffset = offset;
     }
 
-    public float getStartXOffset(){
+    public float getStartXOffset() {
         return this.xStartOffset;
     }
 
-    public void setEndXOffset(float offset){
+    public void setEndXOffset(float offset) {
         this.xEndOffset = offset;
     }
 
-    public float getEndXOffset(){
+    public float getEndXOffset() {
         return this.xStartOffset + this.xEndOffset;
     }
 
-    public void setStartYOffset(float offset){
+    public void setStartYOffset(float offset) {
         this.yStartOffset = offset;
     }
 
-    public float getStartYOffset(){
+    public float getStartYOffset() {
         return this.yStartOffset;
     }
 
-    public void setEndYOffset(float offset){
+    public void setEndYOffset(float offset) {
         this.yEndOffset = offset;
     }
 
-    public float getEndYOffset(){
+    public float getEndYOffset() {
         return this.yStartOffset + this.yEndOffset;
     }
 

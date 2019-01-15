@@ -15,11 +15,9 @@ public class WeatherAnimView extends RelativeLayout {
 
     private View lightningLayout;
 
-    public WeatherAnimView(Context context, AttributeSet attrs){
+    public WeatherAnimView(Context context, AttributeSet attrs) {
         super(context, attrs);
         LayoutInflater.from(context).inflate(R.layout.weather_anim_view, this, true);
-
-
 
 
         lightningLayout = findViewById(R.id.lightning_layout);
