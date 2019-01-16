@@ -12,11 +12,18 @@
         android:layout_height="wrap_content"
         android:text="start"/>
 
-    <com.unit.test.myrainsnowtest.WeatherAnimView
-        android:id="@+id/weather_anim_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone">
+    <!--<com.unit.test.myrainsnowtest.WeatherAnimView-->
+        <!--android:id="@+id/weather_anim_view"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:visibility="gone">-->
 
-    </com.unit.test.myrainsnowtest.WeatherAnimView>
+    <!--</com.unit.test.myrainsnowtest.WeatherAnimView>-->
+
+    <com.unit.test.myrainsnowtest.WeatherDynamicView
+        android:id="@+id/weather_dynamic_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </com.unit.test.myrainsnowtest.WeatherDynamicView>
 </RelativeLayout>

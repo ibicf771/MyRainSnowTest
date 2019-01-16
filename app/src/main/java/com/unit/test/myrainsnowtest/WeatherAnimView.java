@@ -22,14 +22,24 @@ public class WeatherAnimView extends RelativeLayout {
 
     private final Handler handler = new Handler();
 
+    public WeatherAnimView(Context context){
+        this(context, null);
+    }
+
     public WeatherAnimView(Context context, AttributeSet attrs) {
         super(context, attrs);
         LayoutInflater.from(context).inflate(R.layout.weather_anim_view, this, true);
-
-
+        
         lightningLayout = findViewById(R.id.lightning_layout);
         cloudBehind = findViewById(R.id.cloud_behind);
         cloudHead = findViewById(R.id.cloud_head);
+    }
+
+    private OnWeatherAnimListener onWeatherAnimListener;
+
+    public void start(OnWeatherAnimListener onWeatherAnimListener){
+        this.onWeatherAnimListener = onWeatherAnimListener;
+        start();
     }
 
     public void start() {
@@ -100,5 +110,12 @@ public class WeatherAnimView extends RelativeLayout {
         //开始动画
         startAnimation(alphaAnimation);
         setVisibility(GONE);
+        if(onWeatherAnimListener != null){
+            onWeatherAnimListener.onWeatherAnimFinish();
+        }
+    }
+
+    public interface OnWeatherAnimListener{
+        void onWeatherAnimFinish();
     }
 }
