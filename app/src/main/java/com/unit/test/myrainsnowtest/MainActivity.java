@@ -11,38 +11,25 @@ import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
 
-//    private View lightningLayout;
+    private WeatherAnimView weatherAnimView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
-//        lightningLayout = findViewById(R.id.lightning_layout);
-//        final Handler handler = new Handler();
+        weatherAnimView = findViewById(R.id.weather_anim_view);
+        findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                weatherAnimView.start();
+            }
+        });
+//        Handler handler = new Handler();
 //        handler.postDelayed(new Runnable() {
 //            @Override
 //            public void run() {
-//                lightningLayout.setVisibility(View.VISIBLE);
-//                handler.postDelayed(new Runnable() {
-//                    @Override
-//                    public void run() {
-//                        lightningLayout.setVisibility(View.GONE);
-//                        handler.postDelayed(new Runnable() {
-//                            @Override
-//                            public void run() {
-//                                lightningLayout.setVisibility(View.VISIBLE);
-//                                handler.postDelayed(new Runnable() {
-//                                    @Override
-//                                    public void run() {
-//                                        lightningLayout.setVisibility(View.GONE);
-//                                    }
-//                                }, 100);
-//                            }
-//                        }, 100);
-//                    }
-//                }, 100);
+//                weatherAnimView.start();
 //            }
-//        }, 1000);
+//        }, 2000);
+
     }
 }

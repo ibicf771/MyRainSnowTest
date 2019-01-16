@@ -6,83 +6,17 @@
     android:layout_height="match_parent"
     tools:context="com.unit.test.myrainsnowtest.MainActivity">
 
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="start"/>
+
     <com.unit.test.myrainsnowtest.WeatherAnimView
+        android:id="@+id/weather_anim_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:visibility="gone">
 
     </com.unit.test.myrainsnowtest.WeatherAnimView>
-    <!--<RelativeLayout-->
-        <!--android:id="@+id/lightning_layout"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:visibility="gone"-->
-        <!--android:background="@drawable/shanbai">-->
-
-        <!--<ImageView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginTop="40dp"-->
-            <!--android:layout_centerHorizontal="true"-->
-            <!--android:background="@drawable/shandianyun"/>-->
-    <!--</RelativeLayout>-->
-
-
-
-
-
-    <!--<com.unit.test.myrainsnowtest.panningview.PanningView-->
-        <!--android:id="@+id/train"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_alignParentTop="true"-->
-        <!--app:autoStart="true"-->
-        <!--app:duration="15000"-->
-        <!--app:leftToRight="true"-->
-        <!--app:drawable="@drawable/yunhou" />-->
-
-
-    <!--<com.unit.test.myrainsnowtest.panningview.PanningView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_alignParentTop="true"-->
-        <!--app:autoStart="true"-->
-        <!--app:duration="15000"-->
-        <!--app:leftToRight="false"-->
-        <!--app:drawable="@drawable/yunqian" />-->
-
-
-
-
-
-
-    <!--&lt;!&ndash;<com.unit.test.myrainsnowtest.snowfall.SnowfallView&ndash;&gt;-->
-        <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
-        <!--&lt;!&ndash;android:layout_height="match_parent"&ndash;&gt;-->
-        <!--&lt;!&ndash;app:snowflakesNum="250"&ndash;&gt;-->
-        <!--&lt;!&ndash;app:snowflakeAlphaMin="150"&ndash;&gt;-->
-        <!--&lt;!&ndash;app:snowflakeAlphaMax="255"&ndash;&gt;-->
-        <!--&lt;!&ndash;app:snowflakeAngleMax="5"&ndash;&gt;-->
-        <!--&lt;!&ndash;app:snowflakeSizeMin="8dp"&ndash;&gt;-->
-        <!--&lt;!&ndash;app:snowflakeSizeMax="32dp"&ndash;&gt;-->
-        <!--&lt;!&ndash;app:snowflakeSpeedMin="4"&ndash;&gt;-->
-        <!--&lt;!&ndash;app:snowflakeSpeedMax="12"&ndash;&gt;-->
-        <!--&lt;!&ndash;app:snowflakesFadingEnabled="true"&ndash;&gt;-->
-        <!--&lt;!&ndash;app:snowflakesAlreadyFalling="false"&ndash;&gt;-->
-        <!--&lt;!&ndash;app:snowflakeImage="@drawable/snowflake"/>&ndash;&gt;-->
-
-    <!--<com.unit.test.myrainsnowtest.snowfall.SnowfallView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:layout_marginTop="200dp"-->
-        <!--app:snowflakesNum="100"-->
-        <!--app:snowflakeAlphaMin="100"-->
-        <!--app:snowflakeAlphaMax="255"-->
-        <!--app:snowflakeAngleMax="5"-->
-        <!--app:snowflakeSizeMin="15dp"-->
-        <!--app:snowflakeSizeMax="32dp"-->
-        <!--app:snowflakeSpeedMin="20"-->
-        <!--app:snowflakeSpeedMax="25"-->
-        <!--app:snowflakesFadingEnabled="false"-->
-        <!--app:snowflakesAlreadyFalling="true"-->
-        <!--app:snowflakeImage="@drawable/rain"/>-->
 </RelativeLayout>
